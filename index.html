@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Script Executor</title>
+</head>
+<body>
+  <h1>Dynamic Script Executor</h1>
+
+  <button onclick="launchBrowser()">Launch Browser</button>
+  <br><br>
+
+  <input id="urlInput" type="text" placeholder="Enter URL" />
+  <button onclick="navigate()">Navigate</button>
+  <br><br>
+
+  <textarea id="codeInput" rows="6" cols="50" placeholder="Write your code here"></textarea>
+  <br>
+  <button onclick="executeCode()">Execute Code</button>
+  <br><br>
+
+  <div id="output"></div>
+  <br>
+  <button onclick="closeBrowser()">Close Browser</button>
+
+  <script>
+    async function launchBrowser() {
+      const output = document.getElementById('output');
+      output.innerHTML = 'Launching browser...';
+      
+      const response = await fetch('http://localhost:3000/launch-browser', {
+        method: 'POST',
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        output.innerHTML = result.message;
+      } else {
+        output.innerHTML = `Error: ${result.error}`;
+      }
+    }
+
+    async function navigate() {
+      const url = document.getElementById('urlInput').value;
+      const output = document.getElementById('output');
+      
+      if (!url.trim()) {
+        output.innerHTML = 'Error: No URL provided!';
+        return;
+      }
+
+      output.innerHTML = 'Navigating...';
+
+      try {
+        const response = await fetch('http://localhost:3000/navigate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          output.innerHTML = result.message;
+        } else {
+          output.innerHTML = `Error: ${result.error}`;
+        }
+      } catch (error) {
+        output.innerHTML = `Error: ${error.message}`;
+      }
+    }
+
+    async function executeCode() {
+      const code = document.getElementById('codeInput').value;
+      const output = document.getElementById('output');
+      
+      if (!code.trim()) {
+        output.innerHTML = 'Error: No code provided!';
+        return;
+      }
+
+      output.innerHTML = 'Executing...';
+
+      try {
+        const response = await fetch('http://localhost:3000/execute', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          output.innerHTML = `Result: ${result.result}`;
+        } else {
+          output.innerHTML = `Error: ${result.error}`;
+        }
+      } catch (error) {
+        output.innerHTML = `Error: ${error.message}`;
+      }
+    }
+
+    async function closeBrowser() {
+      const output = document.getElementById('output');
+      output.innerHTML = 'Closing browser...';
+      
+      const response = await fetch('http://localhost:3000/close-browser', {
+        method: 'POST',
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        output.innerHTML = result.message;
+      } else {
+        output.innerHTML = `Error: ${result.error}`;
+      }
+    }
+  </script>
+</body>
+</html>
