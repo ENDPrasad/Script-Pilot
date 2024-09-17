@@ -61,7 +61,7 @@ async function executeDynamicCode(page) {
 // Call the function and pass the `page` object
 executeDynamicCode(page).then(() => {
     result = "Step executed successfully"
-    res.json({ success: true, result });
+    res.json({ success: true, message:result });
 }).catch(error => {
     res.json({ success: false, error: error.message });
 });

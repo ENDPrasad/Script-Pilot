@@ -1,0 +1,15 @@
+
+/* 
+
+#DBAFA0
+#BB8493
+#704264
+#49243E
+
+*/
+
+
+.home-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

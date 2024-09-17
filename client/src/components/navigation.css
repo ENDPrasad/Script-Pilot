@@ -1,0 +1,22 @@
+.navigation-section 
+{
+    background-color: violet;
+    grid-column: span 2;
+    display: flex;
+    height: 5rem;
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.navigate {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

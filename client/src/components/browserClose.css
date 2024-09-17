@@ -1,0 +1,5 @@
+.close-section{
+    background-color: aqua;
+    grid-column: span 2;
+
+}

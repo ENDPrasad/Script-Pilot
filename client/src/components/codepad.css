@@ -1,0 +1,12 @@
+.codepad-section {
+    background-color: yellowgreen;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}

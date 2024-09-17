@@ -1,0 +1,24 @@
+.result-section {
+    background-color: chocolate;
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.result {
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+}
