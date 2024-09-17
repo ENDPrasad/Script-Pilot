@@ -4,8 +4,8 @@ function PreviousCodeScreen({prevCode}:InferProps<typeof PreviousCodeScreen.prop
     return <div className="prev-screen-section">
         {/* <h3 className="prev-code">Previous Screen</h3> */}
         <div className="prev-screen">
-            <label htmlFor="previous">Previous Code</label>
-            <pre id="previous">{prevCode}</pre>
+            <h4 className="previous">Previous Code</h4>
+            <pre id="previous-code" style={{fontFamily:"Source Code Pro"}}>{prevCode}</pre>
         </div>
     </div>
 }

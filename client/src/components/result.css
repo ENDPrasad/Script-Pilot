@@ -1,10 +1,14 @@
+
 .result-section {
-    background-color: chocolate;
+    /* background-color: chocolate; */
     display: flex;
     justify-content: flex-start;
     align-items: start;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
+    border: 2px solid #704264;
+    
+
 }
 
 .flex {
@@ -20,5 +24,8 @@
 .result {
     align-items: flex-start;
     justify-content: flex-start;
+    font-family: Helvetica, sans-serif;
+    font-size: large;
+    
     
 }

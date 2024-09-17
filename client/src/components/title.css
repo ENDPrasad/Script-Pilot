@@ -1,20 +1,43 @@
+/* 
+
+#DBAFA0
+#BB8493
+#704264
+#49243E
+
+*/
+
 .title-section {
-    background-color: tomato;
+    background-color: #BB8493;
     grid-column: span 2;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 1rem;
+    
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    text-align: center;
 }
 
 .logo-section {
-    width: 6rem;
+    width: 5rem;
     height: 6rem;
+    margin-bottom: 1rem;
 }
 
 .logo {
     width: 10rem;
     object-fit: contain;
+}
+
+.title-description {
+    font-size: medium;
 }

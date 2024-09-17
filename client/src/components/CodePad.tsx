@@ -31,7 +31,7 @@ function CodePad({onClickHandle}:InferProps<typeof CodePad.propTypes>){
     return <div className="codepad-section flex">
         <div className="codepad flex flex-column">
             <label htmlFor="code">Execute Current Script</label>
-            <textarea name="code" id="code" onChange={onChangeHandler}></textarea>
+            <textarea placeholder='Enter your command/s here' name="code" id="code" onChange={onChangeHandler}></textarea>
             <CustomButton title='Execute' onClickHandler={onClickHandler}/>
         </div>
     </div>

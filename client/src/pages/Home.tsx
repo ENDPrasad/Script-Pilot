@@ -6,6 +6,7 @@ import PreviousCodeScreen from "../components/PreviousCodeScreen";
 import Result from "../components/Result";
 import Title from "../components/Title";
 import './home.css'
+import Footer from "../components/Footer";
 
 
 function Home(){
@@ -40,6 +41,7 @@ function Home(){
         <CodePad  onClickHandle={onClickHandler}/>
         <Result result={result} />
         <BrowserClose onClickHandle={onClickHandler}/>
+        <Footer />
     </div>
 }
 

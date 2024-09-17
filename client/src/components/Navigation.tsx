@@ -5,6 +5,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import PropType, {InferProps} from 'prop-types'
 
+import './reusable.css'
+
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
 function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
@@ -39,7 +41,7 @@ function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
                 <CustomButton title='Launch' onClickHandler={onClickHandler}/>
                 </div>
             <div className="navigate">
-                <input type="url" placeholder='Enter targeted URL' onChange={onChangeHandler}/>
+                <input id='url' type="url" placeholder='Enter targeted URL' onChange={onChangeHandler}/>
             <CustomButton title='Navigate' onClickHandler={onClickHandler}/>
             </div>
         </div>

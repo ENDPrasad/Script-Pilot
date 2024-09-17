@@ -1,12 +1,52 @@
-.codepad-section {
-    background-color: yellowgreen;
-}
+/* 
+
+#DBAFA0
+#BB8493
+#704264
+#49243E
+
+*/
+
 .flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 .flex-column {
     flex-direction: column;
+}
+
+
+.codepad-section {
+    /* background-color: yellowgreen; */
+    border: 2px solid #704264;
+}
+
+.codepad {
+    width: 100%;
+    padding: 1rem;
+    background-color: #704264;
+    gap: 1rem;
+
+}
+
+label {
+    color: #DBAFA0;
+    font-size: large;
+    font-weight: bold;
+}
+
+textarea {
+    width: 90%;
+    min-height: 5rem;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    font-family: "Source Code Pro" 'Inter';
+    font-weight: bold;
+    background-color: #DBAFA0;
+
+    border: 1px solid #BB8493;
+    outline: none;
+    resize: vertical;
 }
