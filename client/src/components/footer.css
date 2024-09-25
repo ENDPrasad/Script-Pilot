@@ -1,10 +1,10 @@
 .footer-section {
-    background-color: #704264;
+    background-color: #1D4A7A;
     display: flex;
     align-items: center;
     justify-content: center;
     /* width: 100%; */
     grid-column: span 2;
     padding: 2rem 4rem;
-    color: #DBAFA0;
+    color: #f7f0f2;
 }

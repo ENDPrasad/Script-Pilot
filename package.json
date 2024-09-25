@@ -15,6 +15,11 @@
     "express": "^4.21.0",
     "path": "^0.12.7",
     "playwright": "^1.47.0",
+    "prismjs": "^1.29.0",
+    "react-simple-code-editor": "^0.14.1",
     "vm2": "^3.9.19"
+  },
+  "devDependencies": {
+    "@types/prismjs": "^1.26.4"
   }
 }

@@ -6,7 +6,9 @@
     align-items: start;
     margin: 0;
     padding: 1rem;
-    border: 2px solid #704264;
+    border: 2px solid #1D4A7A;
+    width: 100%-2px;
+    
     
 
 }
@@ -26,6 +28,8 @@
     justify-content: flex-start;
     font-family: Helvetica, sans-serif;
     font-size: large;
+    text-wrap: wrap;
+    width: 100%;
     
     
 }

@@ -7,19 +7,20 @@
 
 #DBAFA0
 #BB8493
-#704264
+#1D4A7A
 #49243E
 
 */
 
 .prev-screen-section{
-    width: 100%;
+    width: 100% - 2px;
     /* grid-column: span 2; */
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    background-color: #704264;
-
+    /* background-color: #1D4A7A; */
+    border: 2px solid #1D4A7A;
+    border-bottom: none;
     
 }
 
@@ -28,27 +29,28 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    /* border: 2px solid #704264; */
+    /* border: 2px solid #1D4A7A; */
     padding: 1rem;
     /* border-radius: 0.5rem; */
     width: 100%;
 }
 
 .previous {
-    color: #DBAFA0;
+    color: #1D4A7A;
 
 }
 
 pre#previous-code{
-    border: 2px solid #704264;
+    border: 2px solid #1D4A7A;
     border-radius: 0.5rem;
     padding: 1rem 0.5rem;
     font-family: "Source Code Pro" 'Inter';
     font-size: small;
     font-weight: bold;
-    background-color: #BB8493;
+    background-color: #f7f0f2;
     width: 90%;
     border-left: none;
     border-bottom: none;
+    text-wrap: wrap;
     
 }

@@ -2,13 +2,13 @@
 
 #DBAFA0
 #BB8493
-#704264
+#1D4A7A
 #49243E
 
 */
 
 .title-section {
-    background-color: #BB8493;
+    /* background-color: #BB8493; */
     grid-column: span 2;
     display: flex;
     align-items: center;

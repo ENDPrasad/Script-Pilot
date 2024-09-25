@@ -2,7 +2,7 @@
 
 #DBAFA0
 #BB8493
-#704264
+#1D4A7A
 #49243E
 
 */
@@ -20,19 +20,27 @@
 
 .codepad-section {
     /* background-color: yellowgreen; */
-    border: 2px solid #704264;
+    border: 2px solid #1D4A7A;
+    border-right: none;
+    
+}
+
+.codepad-section button {
+    /* border: 2px solid #e9cfd6; */
+    background-color: #1D4A7A;
+    color: #f7f0f2;
 }
 
 .codepad {
     width: 100%;
     padding: 1rem;
-    background-color: #704264;
+    /* background-color: #1D4A7A; */
     gap: 1rem;
 
 }
 
 label {
-    color: #DBAFA0;
+    color: #1D4A7A;
     font-size: large;
     font-weight: bold;
 }
@@ -44,9 +52,10 @@ textarea {
     padding: 0.7rem;
     font-family: "Source Code Pro" 'Inter';
     font-weight: bold;
-    background-color: #DBAFA0;
+    background-color: #f7f0f2;
 
     border: 1px solid #BB8493;
     outline: none;
     resize: vertical;
 }
+

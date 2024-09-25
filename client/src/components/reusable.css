@@ -2,7 +2,7 @@
 
 #DBAFA0
 #BB8493
-#704264
+#1D4A7A
 #49243E
 
 */
@@ -10,20 +10,56 @@
 button, input{
     outline: none;
     border: none;
-    background-color: #49243E;
+    background-color: #1D4A7A;
     padding: 0.7rem 1.4rem;
-    color: #DBAFA0;
+    color: white;
     border-radius: 0.5rem;
     cursor: pointer;
     font-weight: bold;
     font-size: medium;
+    border: 2px solid #1D4A7A;
+}
+
+button:hover{
+    background-color: white;
+    color: #1D4A7A;
+    border: 2px solid #1D4A7A;
 }
 
 input {
-    background-color: #DBAFA0;
+    background-color: white;
+    border: 2px solid #1D4A7A;
     color: rgb(53, 52, 52);
     padding: 0.7rem 0.7rem;
     font-size: medium;
     cursor: text;
     
+}
+
+.full-width {
+    width: 100%;
+}
+
+.relative {
+    position: relative;
+}
+
+.float-text {
+    position: absolute;
+}
+
+
+
+.float-top-right,.float-top-right-left {
+    top: 5px;
+    right: 5px;
+    background-color: #1D4A7A;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.float-top-right-left {
+    right: 4rem;
 }

@@ -2,7 +2,7 @@
 
 #DBAFA0
 #BB8493
-#704264
+#1D4A7A
 #49243E
 
 */
@@ -21,7 +21,7 @@
 
     grid-column: 1/2;
     /* padding: 1rem; */
-    border: 2px solid #704264;
+    border: 2px solid #1D4A7A;
     border-bottom: none;
     border-right: none;
     /* row-gap: none; */
@@ -51,5 +51,7 @@
 }
 
 #url {
+    font-style: italic;
+    font-weight: normal;
     
 }

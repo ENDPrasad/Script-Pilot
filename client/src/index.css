@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #BB8493;
-  color: #49243E
+  background-color: white;
+  color: #1D4A7A
 }
 
 code {
@@ -15,17 +15,17 @@ code {
 }
 
 
-::selection {
-  background-color: #DBAFA0;  /* Highlight background color */
-  color: #49243E;               /* Highlight text color */
+/* ::selection {
+  background-color: #49243E; 
+  color: #ddc4bb;              
 }
 
 textarea::selection, input::selection {
-  background-color: #49243E;  /* Highlight background color */
-  color: #DBAFA0;               /* Highlight text color */
-}
+  background-color:  #ddc4bb;  
+  color: #49243E;               
+} */
 
 ::placeholder {
-  color: #49243E;
+  color: #1D4A7A;
   opacity: 0.5; 
 }

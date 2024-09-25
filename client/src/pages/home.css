@@ -3,7 +3,7 @@
 
 #DBAFA0
 #BB8493
-#704264
+#1D4A7A
 #49243E
 
 */
@@ -13,4 +13,5 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     /* row-gap: 1rem; */
+    
 }

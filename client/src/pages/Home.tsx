@@ -20,26 +20,36 @@ function Home(){
         if(data.success === true && data.message === "Step executed successfully"
         ){
 
-            setPrevCode(prev => prev+'\n' + data.code)
-            setResult(res => `${res}\n-----------\n${data.message}`)
+            setPrevCode(prev => prev+`\n` + data.code + ' // ✅ success')
+            setResult(res => `${res}\n✅ ${data.message}`)
         }
 
         else if(data.success && data.message){
-            setResult(res => `${res}\n-----------\n${data.message}`)
+            setResult(res => `${res}\n✅ ${data.message}`)
         }else {
-            setResult(res => `${res}\n-----------\n${data.error}`)
+            setResult(res => `${res}\n❌ ${data.error}`)
+            if(data.code)
+                setPrevCode(prev => prev+`\n` + data.code + " // ❌ failed")
             
         }
 
 
     }
+
+    function clearResult(){
+        setResult('')
+    }
+
+    function clearPrevCode(){
+        setPrevCode('')
+    }
     
     return <div className="home-section">
         <Title />
         <Navigation onClickHandle={onClickHandler} />
-        <PreviousCodeScreen prevCode= {prevCode} />
+        <PreviousCodeScreen prevCode= {prevCode} clear={clearPrevCode} />
         <CodePad  onClickHandle={onClickHandler}/>
-        <Result result={result} />
+        <Result result={result} clear={clearResult}/>
         <BrowserClose onClickHandle={onClickHandler}/>
         <Footer />
     </div>
