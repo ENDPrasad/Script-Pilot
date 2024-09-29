@@ -7,6 +7,7 @@ import Result from "../components/Result";
 import Title from "../components/Title";
 import './home.css'
 import Footer from "../components/Footer";
+import Spinner from "../components/Spinner";
 
 
 function Home(){
@@ -17,7 +18,7 @@ function Home(){
         console.log(data)
         console.log(data.success === true)
         
-        if(data.success === true && data.message === "Step executed successfully"
+        if(data.success === true && data.message?.includes("executed successfully")
         ){
 
             setPrevCode(prev => prev+`\n` + data.code + ' // ✅ success')
@@ -52,6 +53,7 @@ function Home(){
         <Result result={result} clear={clearResult}/>
         <BrowserClose onClickHandle={onClickHandler}/>
         <Footer />
+        {/* <Spinner /> */}
     </div>
 }
 

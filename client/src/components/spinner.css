@@ -1,0 +1,18 @@
+.spinner-section {
+    /* width: 100vw;
+    height: 100vh; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: absolute;
+    bottom: 50vh;
+    left: 45vw;
+    /* background-color: rgba(145, 143, 143, 0.418); */
+    /* border-radius: 4rem; */
+    
+    /* height: 100vh; */
+}
+
+.spinner-section * {
+    
+}

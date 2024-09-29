@@ -6,11 +6,15 @@ import axios from 'axios';
 import PropType, {InferProps} from 'prop-types'
 
 import './reusable.css'
+import { createPortal } from 'react-dom';
+import Spinner from './Spinner';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL
 
 function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
     const [url, setUrl] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
+
 
     function onChangeHandler(e:React.ChangeEvent<HTMLInputElement>){
         console.log(e.target.value)
@@ -20,20 +24,30 @@ function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
     async function onClickHandler(e:React.MouseEvent<HTMLButtonElement>){
         console.log(e.currentTarget.title)
         if(e.currentTarget.title == 'Launch'){
+        setIsLoading(true)
+
             axios.post(BASE_URL + '/launch-browser', {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(response => response.data).then(data=>onClickHandle?onClickHandle({...data, title:'Launch'}):'').catch(err =>onClickHandle?onClickHandle(err):'')
+     
+            }).then(response => response.data).then(data=>onClickHandle?onClickHandle({...data, title:'Launch'}):'').catch(err =>onClickHandle?onClickHandle(err):'').finally(()=>setIsLoading(false))
+
+
         }else if(e.currentTarget.title == 'Navigate'){
+        setIsLoading(true)
+
             axios.post(BASE_URL + '/navigate', {
                 url
             }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(response => response.data).then(data=>onClickHandle?onClickHandle({...data, title:'Navigate'}):'').catch(err =>onClickHandle?onClickHandle(err):'')
+    }).then(response => response.data).then(data=>onClickHandle?onClickHandle({...data, title:'Navigate'}):'').catch(err =>onClickHandle?onClickHandle(err):'').finally(()=>setIsLoading(false))
+    
+
         }
+
     }
     return <div className="navigation-section">
         <div className="navigation">
@@ -45,6 +59,7 @@ function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
             <CustomButton title='Navigate' onClickHandler={onClickHandler}/>
             </div>
         </div>
+        {isLoading && createPortal(<Spinner />, document.body)}
     </div>
 }
 
