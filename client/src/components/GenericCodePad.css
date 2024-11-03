@@ -1,0 +1,14 @@
+
+
+.selector, .count, .nth-element {
+    border: none;
+    font-family: monospace;
+}
+
+.count, .nth-element {
+    width: 3rem;
+}
+
+/* .code-description {
+    padding: 1rem;
+} */

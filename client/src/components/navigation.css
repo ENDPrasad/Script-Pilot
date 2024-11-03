@@ -49,7 +49,14 @@
     /* flex-direction: column; */
     gap: 1rem;
 }
+.launch {
+    display: flex;
+    gap: 0.5rem;
+}
 
+.launch select {
+    border: 1px solid gray;
+}
 #url {
     font-style: italic;
     font-weight: normal;

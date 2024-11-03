@@ -13,6 +13,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 
 function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
     const [url, setUrl] = useState('')
+    const [browser, setBrowser] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
 
@@ -27,6 +28,8 @@ function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
         setIsLoading(true)
 
             axios.post(BASE_URL + '/launch-browser', {
+                browser
+            },{
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -38,7 +41,8 @@ function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
         setIsLoading(true)
 
             axios.post(BASE_URL + '/navigate', {
-                url
+                url,
+                browser
             }, {
                 headers: {
                     'Content-Type': 'application/json'
@@ -52,6 +56,13 @@ function Navigation({onClickHandle}:InferProps<typeof Navigation.propTypes>){
     return <div className="navigation-section">
         <div className="navigation">
             <div className='launch'>
+                <select id='browserType' onChange={(e)=>setBrowser(e.target.value)}>
+                    <option value="chromium">Chrome</option>
+                    <option value="edge">Edge</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="safari">Safari</option>
+                    
+                </select>
                 <CustomButton title='Launch' onClickHandler={onClickHandler}/>
                 </div>
             <div className="navigate">

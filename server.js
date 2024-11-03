@@ -1,5 +1,6 @@
 const express = require('express');
-const { chromium } = require('playwright');
+const { chromium, BrowserType, msedge, safari, firefox, webkit } = require('playwright');
+const {expect} = require('playwright/test')
 const cors = require('cors');
 
 const app = express();
@@ -16,7 +17,15 @@ let page;
 app.post('/launch-browser', async (req, res) => {
   try {
     if (!browser) {
-      browser = await chromium.launch({ headless: false }); // Launch browser with UI
+      const browserType = req.body.browser
+      if(browserType === 'chromium')
+        browser = await chromium.launch({ headless: false }); // Launch browser with UI
+      else if(browserType === 'edge')
+        browser = await chromium.launch({ headless: false, channel: 'msedge' });
+      else if(browserType === 'firefox')
+        browser = await firefox.launch({ headless: false});
+      else if(browserType === 'safari')
+        browser = await webkit.launch({ headless: false});
       context = await browser.newContext();
       page = await context.newPage();
     }
@@ -52,10 +61,10 @@ app.post('/execute', async (req, res) => {
 
 async function executeDynamicCode(page) {
     // Create an async function that returns the evaluated dynamic code
-    let asyncFunc = new Function("page", `return (async () => { ${code} })();`);
+    let asyncFunc = new Function("page","expect", `return (async () => { ${code} })();`);
 
     // Execute the async function and wait for the operation to be performed
-    await asyncFunc(page);
+    await asyncFunc(page, expect);
 }
 
 // Call the function and pass the `page` object
@@ -68,6 +77,22 @@ executeDynamicCode(page).then(() => {
 
 
 });
+
+
+
+// Route handler
+app.post('/perform-action', async (req, res) => {
+  const { windowNumber } = req.body;
+  const page = browserContext.pages()[windowNumber - 1]; // Select the targeted page
+
+  try {
+      const result = await executeAction(page, req.body);
+      res.status(200).send(result);
+  } catch (error) {
+      res.status(500).send('Failed to perform action: ' + error.message);
+  }
+});
+
 
 // Route to close the browser
 app.post('/close-browser', async (req, res) => {
